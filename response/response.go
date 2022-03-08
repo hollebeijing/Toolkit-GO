@@ -1,10 +1,11 @@
 package response
 
 type Response struct {
-	Total  int           `json:"total"`
-	Result bool          `json:"result"`
-	Errors []*Error      `json:"errors"`
+	Total  int         `json:"total"`
+	Result bool        `json:"result"`
+	Errors []*Error    `json:"errors"`
 	Rows   interface{} `json:"rows"`
+	Id     int         `json:"id"`
 }
 
 func NewResponseDefault() *Response {
@@ -49,4 +50,3 @@ func (r *Response) AppendError(err *Error) *Response {
 	r.Errors = append(r.Errors, err)
 	return r
 }
-

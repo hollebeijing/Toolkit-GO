@@ -1,4 +1,4 @@
-module Toolkit-GO
+module github.com/hollebeijing/Toolkit-GO
 
 go 1.15
 

@@ -66,5 +66,12 @@ func GetRowsResponse(result bool, code constants.ErrorCodeType, total int, rows 
 	resp.Total = total
 	resp.WithRows(rows)
 	return resp
+}
 
+func GetIDResponse(result bool, id int, code constants.ErrorCodeType) *Response {
+	resp := NewResponseDefault()
+	resp.Result = result
+	resp.AppendError(NewErrorWithErrorCode(code))
+	resp.Id = id
+	return resp
 }
